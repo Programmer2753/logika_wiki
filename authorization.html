@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Вікторина</title>
+    <link rel="stylesheet" href="static/style_authorization.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="authorization-container">
+        <h1>Log In</h1>
+        <p class="signup-text">Don't have an account? <a href="{{url_for('registration')}}">Sign up</a></p>
+
+        <div class="social-buttons">
+            <a class="social" href="https://accounts.google.com/" target="_blank">
+                <img src="static/google.png" alt="Google" class="icon"> Google
+            </a>
+            <a class="social" href="https://facebook.com/" target="_blank">
+                <img src="static/facebook.png" alt="Facebook" class="icon"> Facebook
+            </a>
+            <a class="social" href="https://github.com/login" target="_blank">
+                <img src="static/github.png" alt="GitHub" class="icon"> Github
+            </a>
+            <button class="social feide" disabled>
+                <i class="fas fa-unlock-alt"></i> Feide
+            </button>
+        </div>
+
+        <div class="divider">OR</div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <div class="authorization-input">
+            <form method="post">
+                <div class="input-container">
+                    <p>Login</p>
+                    <input class="input" type="text" name="login" value="{{request.form['login']}}">
+                </div>
+                <div class="input-container">
+                    <p>Password</p>
+                    <input class="input" type="password" name="password" value="{{request.form['password']}}">
+                </div>
+                <div class="buttons">
+                    <button class="button_login_forgot" onclick="window.location.href='/reset-password'; return false;">Forgot Password?</button>
+                    <input class="button_login" type="submit" value="Sign in">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.registration-container {
+    background-color: white;
+    padding: 30px 25px;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.signup-text {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.signup-text a {
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+
+.social img.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.social:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.divider {
+    text-align: center;
+    color: #aaa;
+    margin: 15px 0;
+}
+
+.registration-input form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-container p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.button_login_forgot {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.button_login {
+    background-color: #16a34a;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.flash-messages {
+    margin: 10px 0;
+    padding: 0;
+}
+
+.flash {
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.flash.error {
+    background-color: #ffe0e0;
+    color: #a40000;
+}
+
+.flash.success {
+    background-color: #e0ffe0;
+    color: #007500;
+}

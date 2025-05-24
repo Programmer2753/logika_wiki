@@ -1,0 +1,12 @@
+.avatar-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
