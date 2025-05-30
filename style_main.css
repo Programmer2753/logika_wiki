@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #000;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.nav-buttons {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-buttons a {
+  background-color: #000;
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  border: none;
+  font-size: 14px;
+  border-right: 1px solid #444;
+  white-space: nowrap;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.nav-buttons a:last-child {
+  border-right: none;
+}
+
+.nav-buttons a:hover {
+  background-color: #222;
+}

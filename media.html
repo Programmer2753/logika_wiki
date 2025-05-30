@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сторінка для медіа</title>
+    <link rel="stylesheet" href="static/style_main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-buttons">
+            <a href="{{url_for('main')}}">Головна сторінка</a>
+            <a href="{{url_for('events')}}">Поточні події</a>
+            <a href="{{url_for('edits')}}">Нові редагування</a>
+            <a href="{{url_for('new-pages')}}">Нові сторінки</a>
+            <a href="{{url_for('random')}}">Випадкова стаття</a>
+            <a href="{{url_for('special')}}">Спеціальні сторінки</a>
+            <a href="{{url_for('community')}}">Портал спільноти</a>
+            <a href="{{url_for('knaipa')}}">Кнайпа</a>
+            <a href="{{url_for('help')}}">Довідка</a>
+            <a href="{{url_for('media')}}">Сторінка для медіа</a>
+            {% if authorized %}
+                <a href="{{url_for('profile')}}">Профіль</a>
+            {% endif %}
+
+            <a href="{{url_for('registration')}}">Створити обліковий запис</a>
+            <a href="{{url_for('authorization')}}">Увійти</a>
+        </div>
+    </nav>
+    <h2>Тут будуть медіа</h2>
+</body>
+</html>

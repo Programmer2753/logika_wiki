@@ -1,17 +1,16 @@
-<!DOCTYPE html> 
-<html>
+<!DOCTYPE html>
+<html lang="uk">
 <head>
-    <meta charset="utf-8">
-    <title>Вікторина</title>
-    <link rel="stylesheet" href="static/style_profile.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Профіль користувача</title>
+  <link rel="stylesheet" href="/static/style_profile.css">
 </head>
-    <body>
-        <h2>{{ user[1] }}'s Profile</h2>
-        <img src="{{ url_for('static', filename='uploads/' + user[3]) }}" class="profile-pic">
-        <p><strong>Photo:</strong> {{ user[4] }}</p>
-        <p><strong>Login:</strong> {{ user[0] }}</p>
-        <p><strong>Name:</strong> {{ user[1] }}</p>
-        <p><strong>About:</strong> {{ user[3] }}</p>
-    </body>
+<body>
+  <div class="profile-card">
+    <h2 class="username">{{ us_login }}</h2>
+    <img src="{{ us_photo }}" alt="Аватар" class="avatar">
+    <p class="fullname">{{ us_name }}</p>
+    <p class="about">{{ us_about }}</p>
+  </div>
+</body>
 </html>

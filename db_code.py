@@ -2,6 +2,7 @@ import sqlite3
 from random import randint
 conn = None
 curs = None
+photo = None
 
 def open_db():
     global conn, curs
@@ -38,17 +39,34 @@ def create():
     close()
 
 def add_user(user):
-    with open(user["image"], "rb") as file:
-        photo = file.read()
+    photo = None
+
+    if user.get("image"):
+        try:
+            with open(user["image"], "rb") as file:
+                photo = file.read()
+        except FileNotFoundError:
+            print("Файл не знайдено:", user["image"])
+            photo = None
+
     open_db()
-    curs.execute("INSERT INTO user (login, name, password, about, photo) VALUES (?,?,?,?,?)",
-                            (user["login"], user["name"], user["password"], user["about"], photo))
+    if photo:
+        curs.execute(
+            "INSERT INTO user (login, name, password, about, photo) VALUES (?, ?, ?, ?, ?)",
+            (user["login"], user["name"], user["password"], user["about"], photo)
+        )
+    else:
+        curs.execute(
+            "INSERT INTO user (login, name, password, about) VALUES (?, ?, ?, ?)",
+            (user["login"], user["name"], user["password"], user["about"])
+        )
     conn.commit()
     close()
+    
 
 def get_content():
     open_db()
-    curs.execute("SELECT * FROM quiz ORDER BY id")
+    curs.execute("SELECT * FROM site_content ORDER BY id")
     result = curs.fetchall()
     close()
     return result
@@ -56,6 +74,13 @@ def get_content():
 def get_user(name, password):
     open_db()
     curs.execute("SELECT id, login FROM user WHERE login=(?) AND password=(?)", (name, password))
+    result = curs.fetchone()
+    close()
+    return result
+
+def get_user_by_id(user_id):
+    open_db()
+    curs.execute("SELECT login, name, about, photo FROM user WHERE id=?", (user_id,))
     result = curs.fetchone()
     close()
     return result
