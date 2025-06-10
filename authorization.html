@@ -49,7 +49,7 @@
                     <input class="input" type="password" name="password" value="{{request.form['password']}}">
                 </div>
                 <div class="buttons">
-                    <button class="button_login_forgot" onclick="window.location.href='/reset-password'; return false;">Forgot Password?</button>
+                    <a class="button_login_forgot" href="{{url_for('reset_pas')}}">Forgot Password?</a>
                     <input class="button_login" type="submit" value="Sign in">
                 </div>
             </form>

@@ -19,14 +19,22 @@
             <a href="{{url_for('knaipa')}}">Кнайпа</a>
             <a href="{{url_for('help')}}">Довідка</a>
             <a href="{{url_for('media')}}">Сторінка для медіа</a>
-            {% if authorized %}
-                <a href="{{url_for('profile')}}">Профіль</a>
-            {% endif %}
-
-            <a href="{{url_for('registration')}}">Створити обліковий запис</a>
-            <a href="{{url_for('authorization')}}">Увійти</a>
+            <a href="{{url_for('profile')}}">Профіль</a>
         </div>
     </nav>
+    <header>
+        <div class="left-section">
+            <div class="logo">
+                <img src="static/enc_icon.jpg" alt="Logo" />
+                <strong>Енциклопедія+</strong>
+            </div>
+            <form class="search-bar" method="GET" action="/search">
+                <input type="text" name="q" placeholder="Пошук в Енциклопедія+"/>
+                <button type="submit">Знайти</button>
+            </form>
+        </div>
+        
+    </header>
     <h2>Тут буде кнайпа</h2>
 </body>
 </html>

@@ -1,11 +1,10 @@
 body {
   margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
+  padding: 0;
   background: #f8f9fa;
   color: #202122;
 }
-
 header {
   display: flex;
   align-items: center;
@@ -62,6 +61,7 @@ header .logo {
   background: #eaeaea;
 }
 
+
 nav a {
   margin: 0 8px;
   color: #0645ad;
@@ -86,64 +86,36 @@ nav a {
   border-bottom: 2px solid #000;
 }
 
+main {
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: auto;
+}
 
+main h1 {
+  font-size: 1.8rem;
+}
 
-.profile-wrapper {
+.footer-links {
+  margin-top: 30px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.profile-card {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
+.footer-links a {
+  color: #0645ad;
+  text-decoration: none;
 }
 
-
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
+.info-box {
+  margin-top: 10px;
+  color: #54595d;
 }
 
-.username {
-  font-size: 24px;
+.bold {
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #000000;
 }
-
-.fullname,
-.about {
-  font-size: 16px;
-  color: #444;
-  margin: 5px 0;
-}
-
-.logout-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #b40000;
-  color: rgb(0, 0, 0);
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.logout-btn:hover {
-  background-color: #ff3838;
-}
-
 .navbar {
   background-color: #000;
   overflow-x: auto;
@@ -175,6 +147,36 @@ nav a {
 
 .nav-buttons a:hover {
   background-color: #222;
+}
+
+.description {
+  max-width: 800px;
+  margin: 1rem auto;
+  font-size: 1.1rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.card ul {
+  padding-left: 1.2rem;
 }
 .left-section {
   display: flex;

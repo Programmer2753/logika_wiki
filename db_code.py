@@ -73,14 +73,21 @@ def get_content():
 
 def get_user(name, password):
     open_db()
-    curs.execute("SELECT id, login FROM user WHERE login=(?) AND password=(?)", (name, password))
+    curs.execute("SELECT id, login FROM user WHERE login==(?) AND password==(?)", (name, password))
     result = curs.fetchone()
     close()
     return result
 
 def get_user_by_id(user_id):
     open_db()
-    curs.execute("SELECT login, name, about, photo FROM user WHERE id=?", (user_id,))
+    curs.execute("SELECT login, name, about, photo FROM user WHERE id==(?)", (user_id,))
+    result = curs.fetchone()
+    close()
+    return result
+
+def get_photo(user_id):
+    open_db()
+    curs.execute("SELECT photo FROM user WHERE id==(?)", (user_id,))
     result = curs.fetchone()
     close()
     return result

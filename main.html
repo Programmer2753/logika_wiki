@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Головна</title>
+    <title>Головна сторінка</title>
     <link rel="stylesheet" href="static/style_main.css">
 </head>
 <body>
@@ -22,6 +22,374 @@
             <a href="{{url_for('profile')}}">Профіль</a>
         </div>
     </nav>
-    <h2>Ласкаво просимо до Вікіпедії, вільної енциклопедії, яку може редагувати кожен.</h2>
+    <header>
+        <div class="left-section">
+            <div class="logo">
+                <img src="static/enc_icon.jpg" alt="Logo" />
+                <strong>Енциклопедія+</strong>
+            </div>
+            <form class="search-bar" method="GET" action="/search">
+                <input type="text" name="q" placeholder="Пошук в Енциклопедія+"/>
+                <button type="submit">Знайти</button>
+            </form>
+        </div>
+        
+    </header>
+
+    <div class="tabs">
+        <a href="#">Головна</a>
+        <a href="#">Обговорення</a>
+        <a href="#">Читати</a>
+        <a href="#">Переглянути код</a>
+        <a href="#">Переглянути історію</a>
+    </div>
+
+    <main>
+        <h1>Ласкаво просимо до <a href="{{url_for('main')}}">Енциклопедії+</a>,</h1>
+        <p>вільної енциклопедії, яку <span class="bold">може редагувати кожен</span>.</p>
+
+        <div class="footer-links">
+            <a href="#">Про нас</a>
+            <a href="#">Навігація</a>
+            <a href="#">Створити статтю</a>
+            <a href="#">Реєстрація</a>
+            <a href="#">Довідка</a>
+            <a href="#">Проєкти</a>
+        </div>
+    </main>
+
+    <div class="featured-article-wrapper">
+        <div class="featured-article">
+            <div class="article-header">
+                <h2>Вибрана стаття</h2>
+                <div class="menu-toggle" onclick="toggleDropdown(this)">
+                    <button class="menu-button">⋯</button>
+                    <ul class="dropdown">
+                    <li><a href="#">Пропозиції</a></li>
+                    <li><a href="#">Проект</a></li>
+                    <li><a href="#">Шаблон</a></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="article-content">
+                <div class="text">
+                    <p><strong><a href="#">The Kiev Major</a></strong> — міжнародний <a href="#">кіберспортивний</a> турнір з комп'ютерної гри <a href="#">Dota 2</a>, який відбувся 24—30 квітня 2017 року в <a href="#">Києві</a>.</p>
+                    <p>У змаганні брали участь шістнадцять найсильніших команд світу. Вперше в історії турнір найвищого рівня з Dota 2, організований розробником гри компанією Valve, пройшов на території колишнього Східного блоку. Ігри групової стадії проходили без глядачів, а матчі плей-оф пройшли на сцені Національного палацу мистецтв «Україна» за присутності понад 4 тис. глядачів.
+                    Призовий фонд Kiev Major склав три мільйони доларів США. Переможцем турніру став європейський колектив OG, що в фіналі здолав команду Virtus.pro, за яку виступали українці Володимир Міненко («Noone») та Ілля Іллюк («Lil») під керівництвом українського тренера Івана Антонова («Artstyle»).</p>
+                    <strong><a href="#" class="read-more">Читати далі</a></strong>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Kiev_Major_2017.jpg/250px-Kiev_Major_2017.jpg" alt="The Kiev Major">
+                </div>
+                <div class="footer-link">
+                <a href="{{url_for('selected_articles')}}">Усі вибрані статті (240)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="featured-article-wrapper">
+        <div class="featured-article">
+            <div class="article-header">
+                <h2>Добра стаття</h2>
+                <div class="menu-toggle" onclick="toggleDropdown(this)">
+                    <button class="menu-button">⋯</button>
+                    <ul class="dropdown">
+                    <li><a href="#">Пропозиції</a></li>
+                    <li><a href="#">Проект</a></li>
+                    <li><a href="#">Шаблон</a></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="article-content">
+                <div class="text">
+                    <p><strong><a href="#">Гелон</a></strong> або <strong><a href="#">Гелонос</a></strong> — легендарне велике місто VI—V ст. до н. е., єдиним джерелом відомостей про яке є «Історії» давньогрецького історика та мандрівника Геродота. У своїх нотатках він розташовує місто в північній частині Скіфії у землях племені будинів і зазначає, що його основним населенням були гелони — нащадки стародавніх греків-переселенців з Північного Причорномор'я.</p>
+                    <p>Геродот дізнався про Гелон з розповідей грецьких купців, а сам у ньому ніколи не був, тому більшість сучасних істориків вважають інформацію про місто недостовірною. Як відповідник Гелону у XIX—XX ст. пропонувалися різні протоміста минулого, однак нині ці гіпотези вважаються малоймовірними. Популярною є гіпотеза професора Бориса Шрамка, яка з Гелоном ототожнює скіфське Більське городище на річці Ворскла у Полтавській області.</p>
+                    <strong><a href="#" class="read-more">Читати далі</a></strong>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Orbis_Herodoti.jpg/250px-Orbis_Herodoti.jpg" alt="The Kiev Major">
+                </div>
+                <div class="footer-link">
+                <a href="#">Усі добрі статті (1041)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="featured-article-wrapper">
+        <div class="featured-article">
+            <div class="article-header">
+                <h2>Вибране зображення</h2>
+                <div class="menu-toggle" onclick="toggleDropdown(this)">
+                    <button class="menu-button">⋯</button>
+                    <ul class="dropdown">
+                    <li><a href="#">Пропозиції</a></li>
+                    <li><a href="#">Проект</a></li>
+                    <li><a href="#">Шаблон</a></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="article-content">
+                <div class="text">
+                    <p><strong><a href="#">Національний музей у Вроцлаві</a></strong> Польща, 1883-1886, колишня адміністративна будівля округу Бреслау за проектом Антона фон Бера. Вид з річки <strong><a href="#">Одра</a></strong>.</p>
+                    <strong><a href="#" class="read-more">Читати далі</a></strong>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Wroc%C5%82aw_MuzeumNarodowe.jpg/500px-Wroc%C5%82aw_MuzeumNarodowe.jpg">
+                </div>
+                <div class="footer-link">
+                <a href="#">Галерея</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="featured-article-wrapper">
+        <div class="featured-article">
+            <div class="article-header">
+                <h2>Вибраний список</h2>
+                <div class="menu-toggle" onclick="toggleDropdown(this)">
+                    <button class="menu-button">⋯</button>
+                    <ul class="dropdown">
+                    <li><a href="#">Пропозиції</a></li>
+                    <li><a href="#">Проект</a></li>
+                    <li><a href="#">Шаблон</a></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="article-content">
+                <div class="text">
+                    <p>Ця сторінка перелічує<strong><a href="#"> всі сонячні затемнення</a></strong>, що відбулись або відбудуться протягом XXI століття.</p>
+                    <p>У період з 2001 по 2100 рік на Землі відбудеться 224 сонячних затемнення, з яких 77 будуть частковими, 72 кільцеподібними, 68 повними і 7 гібридними (кільцеподібно-повне). З них два кільцеподібних і одне повне затемнення будуть нецентральними, тобто вісь тіні Місяця пропустить Землю. Найбільша кількість затемнень припадає на 2011, 2029, 2047, 2065, 2076 і 2094 роки — по 4 сонячних затемнення на кожен рік.</p>
+                    <strong><a href="#" class="read-more">Читати далі</a></strong>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Kubotake_-_Diamond_ring_on_22_Jul._2009_%28by%29.jpg/250px-Kubotake_-_Diamond_ring_on_22_Jul._2009_%28by%29.jpg">
+                </div>
+                <div class="footer-link">
+                <a href="#">Усі вибрані списки (278)</a>
+                </div>
+            
+        </div>
+    </div>
+
+
+    <div class="featured-article-wrapper">
+        <div class="featured-article">
+            <div class="article-header">
+                <h2>Розділи</h2>
+            </div>
+            <div class="grid">
+                <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Font_Awesome_5_solid_feather-alt.svg/40px-Font_Awesome_5_solid_feather-alt.svg.png" alt="icon"><a href="#">Біографії</a></div>
+                <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Font_Awesome_5_solid_globe.svg/40px-Font_Awesome_5_solid_globe.svg.png" alt="icon"><a href="#">Географія</a></div>
+                <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Font_Awesome_5_solid_hourglass-half.svg/20px-Font_Awesome_5_solid_hourglass-half.svg.png" alt="icon"><a href="#">Історія</a></div>
+                <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Font_Awesome_5_solid_palette.svg/40px-Font_Awesome_5_solid_palette.svg.png" alt="icon"><a href="#">Мистецтво</a></div>
+                <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Font_Awesome_5_solid_bong.svg/40px-Font_Awesome_5_solid_bong.svg.png" alt="icon"><a href="#">Наука</a></div>
+                <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Font_Awesome_5_solid_flag.svg/40px-Font_Awesome_5_solid_flag.svg.png" alt="icon"><a href="#">Політика</a></div>
+                <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Font_Awesome_5_solid_tree.svg/20px-Font_Awesome_5_solid_tree.svg.png" alt="icon"><a href="#">Природа</a></div>
+                <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Font_Awesome_5_solid_futbol.svg/40px-Font_Awesome_5_solid_futbol.svg.png" alt="icon"><a href="#">Спорт</a></div>
+                <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Font_Awesome_5_solid_users.svg/40px-Font_Awesome_5_solid_users.svg.png" alt="icon"><a href="#">Суспільство</a></div>
+                <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Font_Awesome_5_solid_rocket.svg/40px-Font_Awesome_5_solid_rocket.svg.png" alt="icon"><a href="#">Технології</a></div>
+                <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Vlad1Trezub.svg/20px-Vlad1Trezub.svg.png" alt="icon"><a href="#">Україна</a></div>
+                <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Font_Awesome_5_solid_university.svg/40px-Font_Awesome_5_solid_university.svg.png" alt="icon"><a href="#">Філософія</a></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="featured-article-wrapper">
+        <div class="featured-article">
+            <div class="article-header">
+                <h2>Поточні події</h2>
+                <div class="menu-toggle" onclick="toggleDropdown(this)">
+                    <button class="menu-button">⋯</button>
+                    <ul class="dropdown">
+                    <li><a href="#">Пропозиції</a></li>
+                    <li><a href="#">Проект</a></li>
+                    <li><a href="#">Шаблон</a></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="article-content">
+                <div class="text">
+                    <ul>
+                        <li><strong><a href="#">Лі Чже Мьон</a></strong> переміг на <strong><a href="#">президентських виборах в Південній Кореї</a></strong> (4 червня)</li>
+                        <li><strong><a href="#">Кароль Навроцький</a></strong> переміг на <strong><a href="#">виборах президента Польщі</a></strong> (1 червня, на фото)</li>
+                        <li>Внаслідок <strong><a href="#">спецоперації «Павутина», FPV-дронами</a></strong> була уражена стратегічна авіація на кількох авіабазах РФ (1 червня)</li>
+                        <li><strong><a href="#">ПСЖ</a></strong> виграв <strong><a href="#">Лігу чемпіонів УЄФА</a></strong>, обігравши в <strong><a href="#">фіналі «Інтер»</a></strong> із рекордним рахунком 5:0 (31 травня)</li>
+                    </ul>     
+                    <strong><a href="{{url_for('events')}}" class="read-more">Інші новини</a></strong>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Karol_Nawrocki_%282025%29.jpg/120px-Karol_Nawrocki_%282025%29.jpg">
+                </div>
+                <div class="footer-link">
+                <a href="#">Вікіновини</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="featured-article-wrapper">
+        <div class="featured-article">
+            <div class="article-header">
+                <h2>Цікавинки</h2>
+                <div class="menu-toggle" onclick="toggleDropdown(this)">
+                    <button class="menu-button">⋯</button>
+                    <ul class="dropdown">
+                    <li><a href="#">Проект</a></li>
+                    <li><a href="#">Шаблон</a></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="article-content">
+                <div class="text">
+                    <ul>
+                        <li>Колір <strong><a href="#">«оло»</a></strong> бачило лише п'ять людей у світі</li>
+                        <li><strong><a href="#">Ці стародавні організми</a></strong> (на мал.) свого часу вважали за хвойні, водорості, гриби, лишайники та нарешті — за невідомо-що</li>
+                        <li>У XX столітті у <strong><a href="#">США</a></strong> за вбивство публічно стратили принаймні двох слоних: <strong><a href="#">Мері</a></strong> — повішенням, <strong><a href="#">Топсі</a></strong> — за допомогою змінного струму</li>
+                        <li>Розробка <strong><a href="#">механічного «комп'ютера»</a></strong> коштувала як 20 <strong><a href="#">паровозів</a></strong></li>
+                        <li><strong><a href="#">Пікірувальники</a></strong> та <strong><a href="#">нічні бомбардувальники</a></strong> вийшли з ужитку після <strong><a href="#">Другої світової</a></strong>, однак українські інженери <strong><a href="#">реінкарнували їх у вигляді дронів</a></strong></li>
+                    </ul>     
+                    <strong><a href="#" class="read-more">Запропонувати</a></strong>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Prototaxites_Dawson1888.PNG/60px-Prototaxites_Dawson1888.PNG">
+                </div>
+                <div class="footer-link">
+                <a href="#">Архів</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="featured-article-wrapper">
+        <div class="featured-article">
+            <div class="article-header">
+                <h2>Day Month в історії</h2>
+                <div class="menu-toggle" onclick="toggleDropdown(this)">
+                    <button class="menu-button">⋯</button>
+                    <ul class="dropdown">
+                    <li><a href="#">Проект</a></li>
+                    <li><a href="#">Шаблон</a></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="article-content">
+                    <div class="text">
+                        <ul>
+                            <li>1099 — почалась облога Єрусалима під час першого хрестового походу</li>
+                            <li>1494 — Тордесільяський договір розділив землі за межами Європи між Португальською та Іспанською імперіями вздовж меридіана 49°32'56" з.д.</li>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Carta_de_Domingo_Texeira_%281573%29.jpg/120px-Carta_de_Domingo_Texeira_%281573%29.jpg">
+                            <li>1654 — коронація «Короля-Сонця» Людовика XIV</li>
+                            <li>1753 — засновано Британський музей</li>
+                            <li>1905 — парламент Норвегії Стортинг розірвав Шведсько-норвезьку унію</li>
+                            <li>1916 — під час Брусиловського прориву російська армія зайняла Луцьк</li>
+                            <li>1919 — у ході українсько-польської війни 1918—1919 років розпочалася Чортківська офензива Української Галицької Армії, внаслідок якої від поляків було звільнено Чортків, Тернопіль, Бучач та Перемишляни</li>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/%D0%9D%D0%B0%D1%81%D1%82%D1%83%D0%BF_%D0%93%D1%80%D0%B5%D0%BA%D0%BE%D0%B2%D0%B0%2C_%D1%87%D0%B5%D1%80%D0%B2%D0%B5%D0%BD%D1%8C_1919.jpg/120px-%D0%9D%D0%B0%D1%81%D1%82%D1%83%D0%BF_%D0%93%D1%80%D0%B5%D0%BA%D0%BE%D0%B2%D0%B0%2C_%D1%87%D0%B5%D1%80%D0%B2%D0%B5%D0%BD%D1%8C_1919.jpg">
+                            <li>1929 — набрали чинності Латеранські угоди про статус держави-міста Ватикан</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-link">
+                    <a href="#">Архів</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="featured-article-wrapper">
+        <div class="featured-article">
+            <div class="article-header">
+                <h2>Вікітиждень</h2>
+                <div class="menu-toggle" onclick="toggleDropdown(this)">
+                    <button class="menu-button">⋯</button>
+                    <ul class="dropdown">
+                        <li><a href="#">Пропозиції</a></li>
+                        <li><a href="#">Проект</a></li>
+                        <li><a href="#">Шаблон</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="article-content">
+                <div class="text">
+                    <p>Триває <strong><a href="#">Дитячий тиждень</a></strong></p>   
+                    <div class="footer-link">
+                        <a href="#">Календар</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="language-selector">
+        <button onclick="toggleLangMenu()">🌐 46 мов ▾</button>
+        <div id="lang-menu" class="lang-menu hidden">
+            <input type="text" placeholder="Пошук мови..." onkeyup="filterLangs(this)">
+            <ul>
+                <li>Українська</li>
+                <li>English</li>
+                <li>Русский</li>
+                <li>Polski</li>
+                <li>Deutsch</li>
+                <li>Français</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <hr>
+        <p>Цю сторінку востаннє відредаговано о 00:00, 00 місяця 2025.</p>
+        <p>Текст доступний на умовах ліцензії Creative Commons Attribution-ShareAlike; також можуть діяти додаткові умови. Детальніше див. <a href="#">Умови використання</a>.</p>
+        <div class="footer-links">
+            <a href="#">Політика конфіденційності</a>
+            <a href="#">Про Енциклопедію+</a>
+            <a href="#">Відмова від відповідальності</a>
+            <a href="#">Зворотний зв’язок</a>
+            <a href="#">Кодекс поведінки</a>
+            <a href="#">Розробники</a>
+            <a href="#">Статистика</a>
+            <a href="#">Куки</a>
+        </div>
+    </footer>
+
+    <script>
+    function toggleDropdown(element) {
+        document.querySelectorAll('.menu-toggle').forEach(el => {
+        if (el !== element) el.classList.remove('active');
+        });
+        element.classList.toggle('active');
+    }
+
+    document.addEventListener('click', function (e) {
+        const toggle = e.target.closest('.menu-toggle');
+        if (!toggle) {
+        document.querySelectorAll('.menu-toggle').forEach(el => el.classList.remove('active'));
+        }
+    });
+
+    function toggleLangMenu() {
+        document.getElementById('lang-menu').classList.toggle('hidden');
+    }
+
+    function filterLangs(input) {
+        const filter = input.value.toLowerCase();
+        const items = document.querySelectorAll('.lang-menu li');
+        items.forEach(item => {
+            item.style.display = item.textContent.toLowerCase().includes(filter) ? 'block' : 'none';
+        });
+    }
+    document.addEventListener('click', function(event) {
+        const langMenu = document.getElementById('lang-menu');
+        const button = document.querySelector('.language-selector button');
+        const isClickInside = langMenu.contains(event.target) || button.contains(event.target);
+
+        if (!isClickInside) {
+            langMenu.classList.add('hidden');
+        }
+    });
+
+    </script>
 </body>
 </html>

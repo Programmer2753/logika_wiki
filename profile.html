@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>Профіль користувача</title>
-  <link rel="stylesheet" href="/static/style_profile.css">
+    <meta charset="UTF-8">
+    <title>Профіль користувача</title>
+    <link rel="stylesheet" href="static/style_profile.css">
 </head>
 <body>
-  <div class="profile-card">
-    <h2 class="username">{{ us_login }}</h2>
-    <img src="{{ us_photo }}" alt="Аватар" class="avatar">
-    <p class="fullname">{{ us_name }}</p>
-    <p class="about">{{ us_about }}</p>
-  </div>
+    <nav class="navbar">
+        <div class="nav-buttons">
+            <a href="{{url_for('main')}}">Головна сторінка</a>
+            <a href="{{url_for('events')}}">Поточні події</a>
+            <a href="{{url_for('edits')}}">Нові редагування</a>
+            <a href="{{url_for('new-pages')}}">Нові сторінки</a>
+            <a href="{{url_for('random')}}">Випадкова стаття</a>
+            <a href="{{url_for('special')}}">Спеціальні сторінки</a>
+            <a href="{{url_for('community')}}">Портал спільноти</a>
+            <a href="{{url_for('knaipa')}}">Кнайпа</a>
+            <a href="{{url_for('help')}}">Довідка</a>
+            <a href="{{url_for('media')}}">Сторінка для медіа</a>
+            <a href="{{url_for('profile')}}">Профіль</a>
+        </div>
+    </nav>
+    <header>
+        <div class="left-section">
+            <div class="logo">
+                <img src="static/enc_icon.jpg" alt="Logo" />
+                <strong>Енциклопедія+</strong>
+            </div>
+            <form class="search-bar" method="GET" action="/search">
+                <input type="text" name="q" placeholder="Пошук в Енциклопедія+"/>
+                <button type="submit">Знайти</button>
+            </form>
+        </div>
+        
+    </header>
+
+
+    <div class="profile-wrapper">
+        <div class="profile-card">
+            <h2 class="username">{{ us_login }}</h2>
+            <img src="{{ us_photo }}" alt="Аватар" class="avatar">
+            <h3 class="fullname">{{ us_name }}</h3>
+            <h3 class="about">{{ us_about }}</h3>
+            <form method="post">
+                <input class="logout-btn" type="submit" value="Вийти">
+            </form>
+        </div>
+    </div>
+    
 </body>
 </html>

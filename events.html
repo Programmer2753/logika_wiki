@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поточні події</title>
-    <link rel="stylesheet" href="static/style_main.css">
+    <link rel="stylesheet" href="static/style_events.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
@@ -19,14 +20,49 @@
             <a href="{{url_for('knaipa')}}">Кнайпа</a>
             <a href="{{url_for('help')}}">Довідка</a>
             <a href="{{url_for('media')}}">Сторінка для медіа</a>
-            {% if authorized %}
-                <a href="{{url_for('profile')}}">Профіль</a>
-            {% endif %}
-
-            <a href="{{url_for('registration')}}">Створити обліковий запис</a>
-            <a href="{{url_for('authorization')}}">Увійти</a>
+            <a href="{{url_for('profile')}}">Профіль</a>
         </div>
     </nav>
-    <h2>Тут будуть події</h2>
+    <header>
+        <div class="left-section">
+            <div class="logo">
+                <img src="static/enc_icon.jpg" alt="Logo" />
+                <strong>Енциклопедія+</strong>
+            </div>
+            <form class="search-bar" method="GET" action="/search">
+                <input type="text" name="q" placeholder="Пошук в Енциклопедія+"/>
+                <button type="submit">Знайти</button>
+            </form>
+        </div>
+        
+    </header>
+    <h2>Портал "Поточні події"</h2>
+    <div class="description">
+        <p>Проєкт «Поточні події» створено для висвітлення останніх новин, що відбуваються зараз. Події можуть мати енциклопедичне або суспільне значення, мати джерела та оновлюватися щоденно.</p>
+    </div>
+    <div class="grid">
+        <div class="card">
+            <h2>Останні новини</h2>
+            <ul>
+                <li><strong>3 червня:</strong> Перемога на виборах у Республіці Корея</li>
+                <li><strong>1 червня:</strong> Обстріли в РФ дронами СБУ</li>
+                <li><strong>31 травня:</strong> Перемога ПСЖ у фіналі Ліги чемпіонів</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Вікіновини</h2>
+            <p>«Вікіновини» — відкрите інтернет-видання, яке створюють волонтери. Там висвітлюються події у Вікіспільноті та світі. <a href="#">Читати далі</a></p>
+        </div>
+
+        <div class="card">
+            <h2>Війна в Україні</h2>
+            <ul>
+                <li>Оперативна ситуація станом на 3 червня</li>
+                <li>Обстріли енергетичної інфраструктури</li>
+                <li>Висування українських військ на півдні</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
